@@ -1,7 +1,7 @@
 SHINY DATAVIZ APP FOR STAT3622
 ==============================
 
-This file contains the following modules:
+This directory contains the following modules:
 	main.R - the main function
 	cloud.R - helper functions to plot the word cloud
 	ui.R - the ui of of the app
