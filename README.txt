@@ -10,3 +10,5 @@ This file contains the following modules:
 To launch the app type 'Rscript main.R' to your unix-shell and copy the shown link
 to your browser. If you want to run this on Windows, please execute the whole main.R
 in RStudio.
+
+Quick guide to get started with github: http://rogerdudler.github.io/git-guide/
