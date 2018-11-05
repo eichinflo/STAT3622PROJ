@@ -3,6 +3,7 @@ SHINY DATAVIZ APP FOR STAT3622
 
 This directory contains the following modules:
 	main.R - the main function
+	timeline.R - functions to create the timeline
 	cloud.R - helper functions to plot the word cloud
 	ui.R - the ui of of the app
 	server.R - the server function
