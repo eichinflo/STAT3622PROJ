@@ -1,8 +1,6 @@
 # helper code for the word cloud
-library(shiny)
-library(tm)
+
 library(wordcloud)
-library(stringr)
 
 # this method reads the data, and writes the text of all tweets
 # to a .txt file (we might think of changing the data structure here)
