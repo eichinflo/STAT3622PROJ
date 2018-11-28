@@ -120,7 +120,9 @@ write_trump_counts = function() {
     counts_by_month_as_matrix[word,] = numeric(39)
   }
   
-  save(counts_by_month_as_matrix, counts_by_month, file = 'data/trump_counts.txt')
+  counts_by_month_trump = counts_by_month
+  counts_by_month_as_matrix_trump = counts_by_month_as_matrix
+  save(counts_by_month_as_matrix_trump, counts_by_month_trump, file = 'data/trump_counts.txt')
 }
 
 write_clinton_counts = function() {
@@ -174,8 +176,9 @@ write_clinton_counts = function() {
   for (word in exclude) {
     counts_by_month_as_matrix[word,] = numeric(39)
   }
-  
-  save(counts_by_month_as_matrix, counts_by_month, file = 'data/clinton_counts.txt')
+  counts_by_month_as_matrix_clinton = counts_by_month_as_matrix
+  counts_by_month_clinton = counts_by_month
+  save(counts_by_month_as_matrix_clinton, counts_by_month_clinton, file = 'data/clinton_counts.txt')
 }
 
 if (!file.exists('data/counts.txt')) {
@@ -183,4 +186,6 @@ if (!file.exists('data/counts.txt')) {
 }
 
 load('data/counts.txt')
+load('data/trump_counts.txt')
+load('data/clinton_counts.txt')
 # TODO: make methods and do same thing for hillary

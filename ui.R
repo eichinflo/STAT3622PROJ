@@ -28,7 +28,11 @@ ui = fluidPage(
                              'words', 'Keywords', 
                              choices = names(sort(rowSums(counts_by_month_as_matrix), decreasing = TRUE)[1:1000]), multiple = TRUE
                            ),
-                           checkboxInput("frequency", label = "Frequency Plot", value = FALSE)))
+                           checkboxInput("frequency", label = "Frequency Plot", value = FALSE),
+                           h5('Compare to twitter activity of...'),
+                           checkboxInput("trump", label = "Trump (dashed line)", value = FALSE),
+                           checkboxInput("clinton", label = "Clinton (dotted line)", value = FALSE),
+                           h5('(Frequency plot recommended)')))
              )
   )
 

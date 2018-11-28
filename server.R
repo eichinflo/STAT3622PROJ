@@ -17,7 +17,10 @@ server = function(input, output, session, counts_by_month = counts_by_month_as_m
   })
     
   output$timeline = renderPlot({
-    print(input$words)
-    make_freq_plot(input$words, counts = counts_by_month_as_matrix, frequency = input$frequency)
+    make_freq_plot(input$words, 
+                   counts = counts_by_month_as_matrix, 
+                   frequency = input$frequency, 
+                   trump = input$trump,
+                   clinton = input$clinton)
   })
 }
