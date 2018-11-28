@@ -22,7 +22,7 @@ write_tweet_corpus = function() {
 # into a list
 get_words = function(text) {
   # also use hashtag later on
-  words = str_extract_all(text, '[A-Za-z]+')
+  words = str_extract_all(text, '[A-Za-z]{3,}')
   return(words)
 }
 
