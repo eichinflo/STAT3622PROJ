@@ -46,7 +46,7 @@ make_freq_plot = function(words,
         data_trump = rbind(data_trump, data.frame(month = c(substr(as.vector(colnames(counts))[1:38], 1, 7), "2017-10"), 
                                                   count = numeric(39), wrd = word))
       }
-      if (word %in% rownames(counts_by_month_as_matrix_trump)) {
+      if (word %in% rownames(counts_by_month_as_matrix_clinton)) {
         data_clinton = rbind(data_clinton, data.frame(month = c(substr(as.vector(colnames(counts))[1:38], 1, 7), "2017-10"), 
                                       count = as.vector(counts_by_month_as_matrix_clinton[word,]), wrd = word))
       } else {
@@ -60,12 +60,23 @@ make_freq_plot = function(words,
       data = rbind(data, data.frame(month = c(substr(as.vector(colnames(counts))[1:38], 1, 7), "2017-10"), 
                                     count = as.vector(counts_by_month_as_matrix[word,]) / sum(as.vector(counts_by_month_as_matrix[word,])),
                                     wrd = word))
-      data_trump = rbind(data_trump, data.frame(month = c(substr(as.vector(colnames(counts))[1:38], 1, 7), "2017-10"), 
-                                                count = as.vector(counts_by_month_as_matrix_trump[word,]) / sum(as.vector(counts_by_month_as_matrix_trump[word,])),
-                                                wrd = word))
-      data_clinton = rbind(data_clinton, data.frame(month = c(substr(as.vector(colnames(counts))[1:38], 1, 7), "2017-10"), 
-                                                    count = as.vector(counts_by_month_as_matrix_clinton[word,]) / sum(as.vector(counts_by_month_as_matrix_clinton[word,])),
-                                                    wrd = word))
+      
+      if (word %in% rownames(counts_by_month_as_matrix_trump)) {
+        data_trump = rbind(data_trump, data.frame(month = c(substr(as.vector(colnames(counts))[1:38], 1, 7), "2017-10"), 
+                                                  count = as.vector(counts_by_month_as_matrix_trump[word,]) / sum(as.vector(counts_by_month_as_matrix_trump[word,])),
+                                                  wrd = word))
+      } else {
+        data_trump = rbind(data_trump, data.frame(month = c(substr(as.vector(colnames(counts))[1:38], 1, 7), "2017-10"), 
+                                                  count = numeric(39), wrd = word))
+      }
+      if (word %in% rownames(counts_by_month_as_matrix_clinton)) {
+        data_clinton = rbind(data_clinton, data.frame(month = c(substr(as.vector(colnames(counts))[1:38], 1, 7), "2017-10"), 
+                                                     count = as.vector(counts_by_month_as_matrix_clinton[word,]) / sum(as.vector(counts_by_month_as_matrix_clinton[word,])),
+                                                     wrd = word))
+      } else {
+        data_clinton = rbind(data_clinton, data.frame(month = c(substr(as.vector(colnames(counts))[1:38], 1, 7), "2017-10"), 
+                                                      count = numeric(39), wrd = word))
+      }
     }
   }
   
